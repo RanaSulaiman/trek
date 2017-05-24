@@ -39,24 +39,40 @@
     </script>
 
 <!-- Show trip -->
-    <div id= "show-trip">
+    <div class="row">
+
+    <div id= "show-trip" class="columns small -4 meduin 2">
 
     </div>
 
+
     <script id= "one-trip" type="text/template" >
-    <h1><%- data.name %> </h1>
-    <h2><%- data.continent + " Continent" %></h2>
 
-    <p><strong>Categoey: </strong><%- data.category %></p>
+      <div id="form" class = "colums small-4 meduim-2">
+          <fieldset>
+            <legend>Signup for This Trip</legend>
 
-    <p><strong>Cost: </strong><%- "$" + data.cost %></p>
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name here">
+            <label type="tet" class= "button"> Submit</label>
+          </fieldset>
+      </div>
 
-    <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
+      <h1><%- data.name %> </h1>
+      <h2><%- data.continent + " Continent" %></h2>
+
+      <p><strong>Categoey: </strong><%- data.category %></p>
+
+      <p><strong>Cost: </strong><%- "$" + data.cost %></p>
+
+      <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
 
 
-    <p> <h2>About this trip: </h2><%- data.about %></p>
+      <p> <h2>About this trip: </h2><%- data.about %></p>
 
     </script>
+
+  </div>
 
 
 
