@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="trek.css" media="screen" rel="stylesheet" type="text/css">
+    <title></title>
+  </head>
+  <body>
+
+    <button id = "load"> Trips</button>
+
+    <div id = "alltrips">
+      <table>
+        <thead>
+          <th> ID</th>
+          <th> Name</th>
+          <th> Continent</th>
+          <th> Weeks</th>
+        </thead>
+      </table>
+
+    </div>
+
+    <script id="trips" type="text/template">
+    <tr>
+      <td><%- data.id %></td>
+    <!-- data- is special attribute -->
+      <td><a href = "#" class= "trip-link" data-trip-id= "<%- data.id %>"><%- data.name %></a></td>
+      <!-- <a href = "https://trektravel.herokuapp.com/trips/1"></a> -->
+      <td><%- data.continent %></td>
+      <td><%- data.weeks %></td>
+    </tr>
+    </script>
+
+
+    <div id= "show-trip">
+
+    </div>
+    <script id= "one-trip">
+    
+
+
+
+
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+
+    <script src="trek.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+
+  </body>
+</html>
