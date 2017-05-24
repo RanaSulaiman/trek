@@ -11,7 +11,9 @@ var successCallback = function(response) {
       data: response[i]
     });
 
-    $("#alltrips table").append(generatedHtml);
+    // $("#alltrips table").append(generatedHtml);
+    $("#alltrips").append(generatedHtml);
+
   }
 
   $('.trip-link').click(function(event){
@@ -46,12 +48,26 @@ var failureCallback = function() {
 
 var clickHandler = function(event) {
   //$.get(url, successCallback);
+  var target = $("#alltrips")
+  target.append(
+  "<table>" +
+  "<thead>"+
+  "<th> ID</th>" +
+    "<th> Name</th>" +
+    "<th> Continent</th>" +
+    "<th> Weeks</th>" +
+    "</thead>" +
+    "</table>"
+);
+
   $.get(listUrl, successCallback).fail(failureCallback);
 };
 
 $(document).ready(function() {
   // Associate the click handler
   $('#load').click(clickHandler);
+  // $('#load').on("click", "tbody", clickHandler);
+
 
 
 });
