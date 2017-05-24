@@ -20,6 +20,7 @@ var successCallback = function(response) {
     console.log("trip_id = " , $(this).data().tripId);
     var id = $(this).data().tripId;
     $.get(listUrl + "/" + id , showTripCallback).fail(failureCallback);
+
   });
 };
 
@@ -27,7 +28,16 @@ var successCallback = function(response) {
 var showTripCallback= function(response){
   $("#alltrips").hide();
 
+// Show the trip information
+  var trip = _.template($('#one-trip').html());
+    var generatedHtml = trip({
+      data: response
+    });
+
+    $("#show-trip").append(generatedHtml);
+
 };
+
 
 var failureCallback = function() {
   console.log("Didn't work :(");

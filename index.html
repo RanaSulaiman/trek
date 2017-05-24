@@ -32,15 +32,23 @@
     </tr>
     </script>
 
-
+<!-- Show trip -->
     <div id= "show-trip">
 
     </div>
-    <script id= "one-trip">
-    
+
+    <script id= "one-trip" type="text/template" >
+    <h1><%- data.name %> </h1>
+    <h2><%- data.continent + " Continent" %></h2>
+
+    <p><strong>Categoey: </strong><%- data.category %></p>
+
+    <p><strong>Cost: </strong><%- "$" + data.cost %></p>
+
+    <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
 
 
-
+    <p> <h2>About this trip: </h2><%- data.about %></p>
 
     </script>
 
