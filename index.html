@@ -27,7 +27,6 @@
         </tbody> -->
       <!-- </table> -->
 
-
     </div>
 
     <script id="trips" type="text/template">
@@ -52,7 +51,7 @@
 
     <script id= "one-trip" type="text/template" >
 
-      <div id="form" class = "colums small-4 meduim-2">
+      <!-- <div id="form" class = "colums small-4 meduim-2">
           <fieldset>
             <legend>Signup for This Trip</legend>
 
@@ -60,7 +59,20 @@
             <input type="text" placeholder="Enter your name here">
             <label type="tet" class= "button"> Submit</label>
           </fieldset>
-      </div>
+      </div> -->
+
+      <form action="https://petdibs.herokuapp.com/pets" method="post">
+        <section>
+          <label>Name</label>
+          <input type="text" id="name" name="name"></input>
+        </section>
+
+        <section class="button">
+          <button type="submit">Submit</button>
+        </section>
+    </form>
+
+
 
       <h1><%- data.name %> </h1>
       <h2><%- data.continent + " Continent" %></h2>
@@ -77,9 +89,6 @@
     </script>
 
   </div>
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>

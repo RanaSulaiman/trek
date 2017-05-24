@@ -12,6 +12,7 @@ var successCallback = function(response) {
     });
 
     // $("#alltrips table").append(generatedHtml);
+    $("#show-trip").empty();
     $("#alltrips").append(generatedHtml);
 
   }
@@ -28,7 +29,10 @@ var successCallback = function(response) {
 
 
 var showTripCallback= function(response){
-  $("#alltrips").hide();
+  // $("#alltrips").hide();
+   $("#alltrips").empty();
+
+
 
 // Show the trip information
   var trip = _.template($('#one-trip').html());
@@ -37,7 +41,6 @@ var showTripCallback= function(response){
     });
 
     $("#show-trip").append(generatedHtml);
-
 };
 
 
