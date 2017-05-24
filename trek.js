@@ -44,6 +44,8 @@ var showTripCallback= function(response){
 };
 
 
+
+
 var failureCallback = function() {
   console.log("Didn't work :(");
   $("#errors").html("<h1>AJAX request failed!</h1>");
@@ -67,9 +69,26 @@ var clickHandler = function(event) {
 };
 
 $(document).ready(function() {
-  // Associate the click handler
   $('#load').click(clickHandler);
-  // $('#load').on("click", "tbody", clickHandler);
+
+  // Form
+  $('form').submit(function(e){
+    e.preventDefault();
+    console.log("we are here");
+
+    var url = $(this).attr("action");
+    var formData = $(this).serialize();
+
+    $.post(url, formData, function(response){
+      $('#message').html('<p> Thanks for the reservation </p>');
+
+      console.log(response);
+    })
+    .fail(function(){
+      $('#message').html("<p>Sorry, You couldn't reserve for this trip</p>");
+  });
+  });
+
 
 
 
