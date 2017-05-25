@@ -11,6 +11,7 @@ var successCallback = function(response) {
     var generatedHtml = trips({
       data: response[i]
     });
+
     $("#alltrips table").append(generatedHtml);
   }
 
@@ -27,7 +28,8 @@ var successCallback = function(response) {
 
 var showTripCallback= function(response){
   // $("#alltrips").hide();
-   $("#alltrips").empty();
+  //  $("#alltrips table").empty();
+   $("#alltrips table").hide();
 
 // Show the trip information
   var trip = _.template($('#one-trip').html());
@@ -63,10 +65,15 @@ var failureCallback = function() {
 
 var clickHandler = function(event) {
   $("#show-trip").empty();
+  $("#alltrips table").show();
+
+
   $.get(listUrl, successCallback).fail(failureCallback);
 };
 
 $(document).ready(function() {
+  $("#alltrips table").hide();
+
   $('#load').click(clickHandler);
   // $('#load').on("click",'table',clickHandler);
 });
