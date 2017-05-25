@@ -10,26 +10,26 @@
     <link href="trek.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <section id = "message"></section>
-    <section id = "errors"></section>
 
     <button id = "load"> Trips</button>
 
+    <section id = "message"></section>
+    <section id = "errors"></section>
+
+
     <div id = "alltrips">
-      <!-- <table> -->
-        <!-- <thead>
+      <table id = "table">
+        <thead>
           <th> ID</th>
           <th> Name</th>
           <th> Continent</th>
           <th> Weeks</th>
         </thead>
-        <tbody>
-
-        </tbody> -->
-      <!-- </table> -->
+      </table>
     </div>
 
     <script id="trips" type="text/template">
+    <tbody>
     <tr>
       <td><%- data.id %></td>
     <!-- data- is special attribute -->
@@ -38,19 +38,33 @@
       <td><%- data.continent %></td>
       <td><%- data.weeks %></td>
     </tr>
+    </tbody>
     </script>
 
 <!-- Show trip -->
-        <div id= "show-trip" ></div>
+    <div id= "show-trip" ></div>
 
-      <script id= "one-trip" type="text/template" >
-<div class="row">
+    <script id= "one-trip" type="text/template" >
+      <div class="row">
+        <div class="columns small-12 medium-6">
+
+      <h1><%- data.name %> </h1>
+      <h2><%- data.continent + " Continent" %></h2>
+
+    <p><strong>Categoey: </strong><%- data.category %></p>
+
+    <p><strong>Cost: </strong><%- "$" + Math.round(data.cost) %></p>
+
+    <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
+
+    <p><h2>About this trip: </h2><%- data.about %></p>
+    </div>
 
     <div class ="columns small-12 medium-6">
       <form class="" action="https://trektravel.herokuapp.com/trips/<%-data.id%>/reserve" method="post">
         <section>
           <fieldset>
-            <legend>Signup for This Trip</legend>
+            <h2>Signup for This Trip</h2>
 
           <label>Name</label>
           <input type="text" id="name" name="name"></input>
@@ -68,20 +82,6 @@
     </form>
   </div>
 
-    <div class="columns small-12 medium-6">
-
-      <h1><%- data.name %> </h1>
-      <h2><%- data.continent + " Continent" %></h2>
-
-      <p><strong>Categoey: </strong><%- data.category %></p>
-
-      <p><strong>Cost: </strong><%- "$" + Math.round(data.cost) %></p>
-
-      <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
-
-
-      <p><h2>About this trip: </h2><%- data.about %></p>
-  </div>
 </div>
 
     </script>

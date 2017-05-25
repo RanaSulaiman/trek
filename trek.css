@@ -8,3 +8,9 @@
     display: inline-block;
     font-size: 16px;
 }
+
+td {
+  /*width: 200;*/
+  text-align: center;
+
+}

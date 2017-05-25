@@ -1,7 +1,6 @@
 
 var listUrl =  "https://trektravel.herokuapp.com/trips";
 
-
 var successCallback = function(response) {
   console.log("Success!");
   console.log(response);
@@ -31,8 +30,6 @@ var successCallback = function(response) {
 var showTripCallback= function(response){
   // $("#alltrips").hide();
    $("#alltrips").empty();
-
-
 
 // Show the trip information
   var trip = _.template($('#one-trip').html());
@@ -70,22 +67,31 @@ var failureCallback = function() {
 
 var clickHandler = function(event) {
   //$.get(url, successCallback);
-  var target = $("#alltrips")
-  target.append(
-  "<table>" +
-  "<thead>"+
-  "<th> ID</th>" +
-    "<th> Name</th>" +
-    "<th> Continent</th>" +
-    "<th> Weeks</th>" +
-    "</thead>" +
-    "</table>"
-);
+  // var target = $("#alltrips")
+  // target.append(
+  // "<table>" +
+  // "<thead>"+
+  // "<th width='100'> ID</th>" +
+  //   "<th width='250'> Name </th>" +
+  //   "<th width='100'> Continent</th>" +
+  //   "<th width='100'> Weeks</th>" +
+  //   "</thead>" +
+  //   "</table>"
+  // "<th> ID</th>" +
+  //   "<th> Name </th>" +
+  //   "<th> Continent</th>" +
+  //   "<th> Weeks</th>" +
+  //   "</thead>" +
+  //   "</table>"
+// );
   $.get(listUrl, successCallback).fail(failureCallback);
 };
 
 $(document).ready(function() {
   $('#load').click(clickHandler);
+  // $('#table').hide()
+  // $('#load').on("click",'table',clickHandler);
+
 
 
 });
