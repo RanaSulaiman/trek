@@ -4,28 +4,26 @@ var listUrl =  "https://trektravel.herokuapp.com/trips";
 var successCallback = function(response) {
   console.log("Success!");
   console.log(response);
+  //$("#show-trip").empty();
+
   var trips = _.template($('#trips').html());
   for (var i = 0; i < response.length; i++) {
     var generatedHtml = trips({
       data: response[i]
     });
-
-    // $("#alltrips table").append(generatedHtml);
-    $("#show-trip").empty();
-    $("#alltrips").append(generatedHtml);
-
+    $("#alltrips table").append(generatedHtml);
   }
 
+  // showTripClickHandler
   $('.trip-link').click(function(event){
     console.log("clicked on trip-link");
     // data is jQuery function, shows in the console object{tripId: 2}
+
     console.log("trip_id = " , $(this).data().tripId);
     var id = $(this).data().tripId;
     $.get(listUrl + "/" + id , showTripCallback).fail(failureCallback);
-
   });
 };
-
 
 var showTripCallback= function(response){
   // $("#alltrips").hide();
@@ -39,10 +37,9 @@ var showTripCallback= function(response){
 
     $("#show-trip").append(generatedHtml);
 
-    // Form
+    // Submit post to reserve a spot
     $('form').submit(function(e){
       e.preventDefault();
-      // return false;
       console.log("we are here");
 
       var url = $(this).attr("action");
@@ -52,12 +49,11 @@ var showTripCallback= function(response){
         $('#message').html('<p> Thanks for the reservation </p>');
 
         console.log(response);
-
       })
       .fail(function(){
         $('#message').html("<p>Sorry, You couldn't reserve for this trip</p>");
     });
-    });
+  });
 };
 
 var failureCallback = function() {
@@ -66,32 +62,11 @@ var failureCallback = function() {
 };
 
 var clickHandler = function(event) {
-  //$.get(url, successCallback);
-  // var target = $("#alltrips")
-  // target.append(
-  // "<table>" +
-  // "<thead>"+
-  // "<th width='100'> ID</th>" +
-  //   "<th width='250'> Name </th>" +
-  //   "<th width='100'> Continent</th>" +
-  //   "<th width='100'> Weeks</th>" +
-  //   "</thead>" +
-  //   "</table>"
-  // "<th> ID</th>" +
-  //   "<th> Name </th>" +
-  //   "<th> Continent</th>" +
-  //   "<th> Weeks</th>" +
-  //   "</thead>" +
-  //   "</table>"
-// );
+  $("#show-trip").empty();
   $.get(listUrl, successCallback).fail(failureCallback);
 };
 
 $(document).ready(function() {
   $('#load').click(clickHandler);
-  // $('#table').hide()
   // $('#load').on("click",'table',clickHandler);
-
-
-
 });

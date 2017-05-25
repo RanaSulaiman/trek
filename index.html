@@ -10,12 +10,9 @@
     <link href="trek.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
-
-    <button id = "load"> Trips</button>
-
+    <button id = "load">Explore our Trips</button>
     <section id = "message"></section>
     <section id = "errors"></section>
-
 
     <div id = "alltrips">
       <table id = "table">
@@ -28,6 +25,7 @@
       </table>
     </div>
 
+    <!-- Show trips list -->
     <script id="trips" type="text/template">
     <tbody>
     <tr>
@@ -41,30 +39,30 @@
     </tbody>
     </script>
 
-<!-- Show trip -->
+<!-- Show information for a specific trip -->
     <div id= "show-trip" ></div>
 
     <script id= "one-trip" type="text/template" >
       <div class="row">
         <div class="columns small-12 medium-6">
+          <h1><%- data.name %> </h1>
+          <h2><%- data.continent + " Continent" %></h2>
 
-      <h1><%- data.name %> </h1>
-      <h2><%- data.continent + " Continent" %></h2>
+          <p><strong>Categoey: </strong><%- data.category %></p>
 
-    <p><strong>Categoey: </strong><%- data.category %></p>
+          <p><strong>Cost: </strong><%- "$" + Math.round(data.cost) %></p>
 
-    <p><strong>Cost: </strong><%- "$" + Math.round(data.cost) %></p>
+          <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
 
-    <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
+          <p><h2>About this trip: </h2><%- data.about %></p>
+        </div>
 
-    <p><h2>About this trip: </h2><%- data.about %></p>
-    </div>
-
-    <div class ="columns small-12 medium-6">
-      <form class="" action="https://trektravel.herokuapp.com/trips/<%-data.id%>/reserve" method="post">
-        <section>
+        <div class ="columns small-12 medium-6">
+          <form class="" action="https://trektravel.herokuapp.com/trips/<%-data.id%>/reserve" method="post">
+          <section>
           <fieldset>
-            <h2>Signup for This Trip</h2>
+
+          <h2>Reserve a Spot in This Trip</h2>
 
           <label>Name</label>
           <input type="text" id="name" name="name"></input>
@@ -75,15 +73,13 @@
           <label>Email</label>
           <input type="text" id="name" name="email"></input>
 
-        <section class="button">
+          <section class="button">
           <button type="submit">Submit</button>
-        </section>
-      </fieldset>
-    </form>
-  </div>
-
-</div>
-
+          </section>
+          </fieldset>
+          </form>
+        </div>
+      </div>
     </script>
 
 
