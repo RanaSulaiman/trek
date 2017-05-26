@@ -50,8 +50,6 @@ var showTripCallback= function(response){
     $("#show-trip").empty().append(generatedHtml);
     // or $("#show-trip").html(generatedHtml);
 
-
-
   // FormSubmitEventHabdler
     $('form').submit(formSubmitHandler);
 };
