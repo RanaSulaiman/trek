@@ -19,7 +19,9 @@ var successCallback = function(response) {
 
 var clickHandler = function(event) {
   $("#show-trip").empty();
-  $("#alltrips table").show();
+  $("#alltrips table").empty().show();
+  // $("#trips").empty();
+
 
   $.get(listUrl, successCallback).fail(failureCallback);
 };
@@ -51,7 +53,7 @@ var showTripCallback= function(response){
     // or $("#show-trip").html(generatedHtml);
 
   // FormSubmitEventHabdler
-    $('form').submit(formSubmitHandler);
+    $('#reserve-form').submit(formSubmitHandler);
 };
 
 var formSubmitHandler = function(e){
@@ -73,6 +75,8 @@ var formSubmitHandler = function(e){
 
 var filterClickHandler = function(e){
   $("#alltrips table").empty().show();
+  $("#show-trip").empty();
+
 
   e.preventDefault();
   console.log("clicked trips by continent");
@@ -90,16 +94,10 @@ var filterClickHandler = function(e){
   });
 };
 
-
-
 $(document).ready(function() {
   $("#alltrips table").hide();
   $('#load').click(clickHandler);
 
   // Filter by Continenet
-  $('header').on("submit","form", filterClickHandler);
-
-
-
-
+  $('header').on("submit","#trips-continent", filterClickHandler);
 });
