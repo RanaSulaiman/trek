@@ -12,6 +12,7 @@
     <link href="trek.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
+
     <button id = "load">Explore our Trips</button>
     <section id = "message"></section>
     <section id = "errors"></section>
@@ -34,7 +35,6 @@
       <td><%- data.id %></td>
     <!-- data- is special attribute -->
       <td><a href = "#" class= "trip-link" data-trip-id= "<%- data.id %>"><%- data.name %></a></td>
-      <!-- <a href = "https://trektravel.herokuapp.com/trips/1"></a> -->
       <td><%- data.continent %></td>
       <td><%- data.weeks %></td>
     </tr>
