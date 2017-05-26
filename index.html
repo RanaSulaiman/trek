@@ -22,7 +22,8 @@
 
 
     <select id = "continent" style="width:200px" >
-      <option value="1">Asia</opton>
+      <option value="0"> </option>
+      <option value="1">Asia</option>
       <option value="2">Africa</option>
       <option value="3">Australasia</option>
       <option value="4">Europe</option>
@@ -46,12 +47,15 @@
           <th> Continent</th>
           <th> Weeks</th>
         </thead>
+        <tbody id="tbody">
+
+        </tbody>
+
       </table>
     </section>
 
     <!-- Show trips list -->
     <script id="trips" type="text/template">
-    <tbody>
     <tr>
       <td><%- data.id %></td>
     <!-- data- is special attribute -->
@@ -59,7 +63,6 @@
       <td><%- data.continent %></td>
       <td><%- data.weeks %></td>
     </tr>
-    </tbody>
     </script>
 
 <!-- Show information for a specific trip -->

@@ -11,7 +11,7 @@ var successCallback = function(response) {
       data: response[i]
     });
 
-    $("#alltrips table").append(generatedHtml);
+    $("#tbody").append(generatedHtml);
   }
   // showTripClickHand
   $('.trip-link').click(showTripClickHandler);
@@ -19,8 +19,8 @@ var successCallback = function(response) {
 
 var clickHandler = function(event) {
   $("#show-trip").empty();
-  $("#alltrips table").empty().show();
-  // $("#trips").empty();
+  $("#alltrips table").show();
+  $("#tbody").empty();
 
 
   $.get(listUrl, successCallback).fail(failureCallback);
@@ -74,8 +74,10 @@ var formSubmitHandler = function(e){
 
 
 var filterClickHandler = function(e){
-  $("#alltrips table").empty().show();
+  $("#alltrips table").show();
   $("#show-trip").empty();
+  $("#tbody").empty();
+
 
 
   e.preventDefault();
