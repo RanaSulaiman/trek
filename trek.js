@@ -47,7 +47,10 @@ var showTripCallback= function(response){
       data: response
     });
 
-    $("#show-trip").append(generatedHtml);
+    $("#show-trip").empty().append(generatedHtml);
+    // or $("#show-trip").html(generatedHtml);
+
+
 
   // FormSubmitEventHabdler
     $('form').submit(formSubmitHandler);
