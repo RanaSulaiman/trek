@@ -70,8 +70,36 @@ var formSubmitHandler = function(e){
   });
 };
 
+
+var filterClickHandler = function(e){
+  $("#alltrips table").empty().show();
+
+  e.preventDefault();
+  console.log("clicked trips by continent");
+
+  var url = $(this).attr("action");
+  console.log(this);
+  var continent = $("#continent option:selected").html();
+  // var formData = $(this).serialize();
+  console.log(continent);
+  var url = $(this).attr("action") + continent;
+  console.log(url);
+
+  $.get(url, successCallback).fail(function(){
+    $('#message').html("<p>Sorry, Couldn't filter your trips</p>");
+  });
+};
+
+
+
 $(document).ready(function() {
   $("#alltrips table").hide();
-
   $('#load').click(clickHandler);
+
+  // Filter by Continenet
+  $('header').on("submit","form", filterClickHandler);
+
+
+
+
 });

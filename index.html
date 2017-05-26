@@ -12,8 +12,29 @@
     <link href="trek.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <header>
+
+      <h1 class="header">Welcome to TrekTravel</h1>
 
     <button id = "load">Explore our Trips</button>
+
+    <form  id="trips-continent" action="https://trektravel.herokuapp.com/trips/continent?query=" >
+
+
+    <select id = "continent" style="width:200px" >
+      <option value="1">Asia</opton>
+      <option value="2">Africa</option>
+      <option value="3">Australasia</option>
+      <option value="4">Europe</option>
+      <option value="5">South America</option>
+      <option value="6">North America</option>
+    </select>
+    <button class="button success" type="submit">Submit</button>
+  </form>
+
+  </header>
+
+
     <section id = "message"></section>
     <section id = "errors"></section>
 
