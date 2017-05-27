@@ -20,27 +20,20 @@
 
       <button id = "load">Explore our Trips</button>
 
-    <form  id="trips-continent" action="https://trektravel.herokuapp.com/trips/continent?query=" >
+    <section  id="trips-continent" action="https://trektravel.herokuapp.com/trips/continent?query=" >
 
-      <!-- <ul>
-      <li><a href="#">Asia</a></li>
-      <li><a href="#">Africa</a></li>
-    </ul> -->
+    <select id = "continent" style="width:200px" name ="Search by Continent" >
+      <option selected="">See All</option>
+      <option >Asia</option>
+      <option >Africa</option>
+      <option >Australasia</option>
+      <option >Europe</option>
 
-
-    <select id = "continent" style="width:200px" >
-      <option value="0"> </option>
-      <option value="1">Asia</option>
-      <option value="2">Africa</option>
-      <option value="3">Australasia</option>
-      <option value="4">Europe</option>
-      <option value="5">South America</option>
-      <option value="6">North America</option>
     </select>
-    <button class="success button" type="submit">Search by Continent</button>
+    <!-- <button class="button-secondary" type="submit">Search by Continent</button> -->
 
-
-  </form>
+  </section>
+  <!-- </form> -->
 
   </header>
 
