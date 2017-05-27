@@ -1,22 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans|Open+Sans');
+
+@import url('https://fonts.googleapis.com/css?family=Damion');
+
+html, body{
+  height: 100%;
+  /*font-family: 'Acme';*/
+  font-family: 'Alegreya Sans';
+
+  font-style: italic;
+
+}
+/*#load{
+  float:left;
+  border-radius: 50%;
+  display: inline-block;
+}*/
+
 #load {
     background-color: #4CAF50; /* Green */
-    border: none;
+    float:left;
+    border-radius: 50%;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
+
+.success{
+  background-color: #4CAF50; /* Green */
+  /*float:left;*/
+  border-radius: 50%;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+
+}
+
+#trips-continent{
+  display: inline-block;
+}
+
+.header{
+  font-family: "Damion";
+  float: right;
+  color: white;
+}
+
+body,h1,h2{
+  font-family: 'Acme';
+  font-style: italic;
+  text-shadow: -1px 0 blac, 0  1px blac, 1px 0 blac, 0  -1px blac;
+
+}
+body {
+			background-image: url("https://goo.gl/ik2Rk9") ;
+      /*background-image: url("https://goo.gl/vlQ3Ba") ;*/
+
+			background-position: center center;
+			background-repeat:  no-repeat;
+			background-attachment: fixed;
+			background-size:  cover;
+			background-color: #999;
+
+      /*font-family: 'Cherry Cream Soda', cursive;
+      font-family: 'Open Sans', sans-serif;*/
+
+}
+
+
+
 header{
-  height:200px;
-  background-color: lightblue;
+  height:100px;
+  background-color: green;
+  text-align: center;
 
 }
 
-
-td {
+table thead,
+table tbody {
+  /*background: transparent;*/
+}
+td,p {
   /*width: 200;*/
   text-align: left;
+  font-size: 2em;
 
+}
+
+#about-trip {
+  background: white;
+  text-align: justify;
+}
+label {
+  font-size: 1.5em;
 }
