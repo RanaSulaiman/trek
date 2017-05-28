@@ -79,13 +79,7 @@ body {
 			background-attachment: fixed;
 			background-size:  cover;
 			background-color: #999;
-
-      /*font-family: 'Cherry Cream Soda', cursive;
-      font-family: 'Open Sans', sans-serif;*/
-
 }
-
-
 
 header{
   height:100px;
@@ -98,11 +92,11 @@ table thead,
 table tbody {
   /*background: transparent;*/
 }
+
 td,p {
   /*width: 200;*/
   text-align: left;
   font-size: 2em;
-
 }
 
 #about-trip {
@@ -112,10 +106,6 @@ td,p {
 label {
   font-size: 1.5em;
 }
-#one-trip {
+.onetrip-background {
   background: none;
-}
-.remove{
-  background: none;
-
 }
