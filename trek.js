@@ -101,5 +101,5 @@ $(document).ready(function() {
   $('#load').click(clickHandler);
 
   // Filter by Continenet
-  $('header').on("change","#trips-continent", filterClickHandler);
+  $('header').on("submit","#trips-continent", filterClickHandler);
 });

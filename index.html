@@ -16,25 +16,27 @@
   <div class="row">
       <div class="large-12  columns">  <body> -->
     <header>
+      <div class="row ">
+        <div class="columns small-6 medium-3 large-3">
+          <button id = "load">Explore our Trips</button>
+        </div>
+      <div class="columns small-6 medium-5 large-5">
+      <form  id="trips-continent" action="https://trektravel.herokuapp.com/trips/continent?query=" >
+      <select id = "continent" style="width:200px" >
+        <option value="1">Asia</option>
+        <option value="2">Africa</option>
+        <option value="3">Australasia</option>
+        <option value="4">Europe</option>
+        <option value="5">South America</option>
+        <option value="6">North America</option>
+      </select>
+      <button id="button-continent" type="submit">Trips by Continent </button>
+    </form>
+    </div>
+    <div class="columns small-6 medium-4 large-4">
       <h1 class="header">Welcome to TrekTravel</h1>
-
-      <button id = "load">Explore our Trips</button>
-
-    <section  id="trips-continent" action="https://trektravel.herokuapp.com/trips/continent?query=" >
-
-    <select id = "continent" style="width:200px" name ="Search by Continent" >
-      <option selected="Hello">"See All"</option>
-      <option >Asia</option>
-      <option >Africa</option>
-      <option >Australasia</option>
-      <option >Europe</option>
-
-    </select>
-    <!-- <button class="button-secondary" type="submit">Search by Continent</button> -->
-
-  </section>
-  <!-- </form> -->
-
+    </div>
+    </div>
   </header>
 
     <section id = "message"></section>
@@ -70,8 +72,8 @@
     <section id= "show-trip" ></section>
 
     <script id= "one-trip" type="text/template" >
-      <div class="row">
-        <div class="columns small-12 medium-6">
+      <div class="row" "remove">
+        <div class="columns small-12 medium-8">
           <h1><%- data.name %> </h1>
           <h2><%- data.continent + " Continent" %></h2>
 
@@ -81,10 +83,13 @@
 
           <p><strong>Duration: </strong><%- data.weeks +" weeks" %></p>
 
-          <p id="about-trip"><h2>About this trip: </h2><%- data.about %></p>
+          <div class="about-trip">
+
+          <p ><h2>About this trip: </h2><%- data.about %></p></div>
+
         </div>
 
-        <div class ="columns small-12 medium-6">
+        <div class ="columns small-12 medium-4">
           <form id="reserve-form" action="https://trektravel.herokuapp.com/trips/<%-data.id%>/reserve" method="post">
           <section>
           <fieldset>
