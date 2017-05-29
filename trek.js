@@ -52,7 +52,7 @@ var showTripCallback= function(response){
     $("#show-trip").empty().append(generatedHtml);
     // or $("#show-trip").html(generatedHtml);
 
-  // FormSubmitEventHabdler
+    // FormSubmitEventHabdler
     $('#reserve-form').submit(formSubmitHandler);
 };
 
@@ -65,20 +65,16 @@ var formSubmitHandler = function(e){
 
   $.post(url, formData, function(response){
     $('#message').html('<p> Thanks for the reservation </p>');
-
     console.log(response);
   }).fail(function(){
     $('#message').html("<p>Sorry, You couldn't reserve for this trip</p>");
   });
 };
 
-
 var filterClickHandler = function(e){
   $("#alltrips table").show();
   $("#show-trip").empty();
   $("#tbody").empty();
-
-
 
   e.preventDefault();
   console.log("clicked trips by continent");
